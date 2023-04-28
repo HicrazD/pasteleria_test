@@ -4,7 +4,6 @@ import java.util.List;
 import java.util.Optional;
 
 import org.springframework.data.domain.Page;
-import org.springframework.data.domain.Pageable;
 
 import com.pasteleriatommy.app.entities.Producto;
 import com.pasteleriatommy.app.exepciones.ResourceNotFoundException;
