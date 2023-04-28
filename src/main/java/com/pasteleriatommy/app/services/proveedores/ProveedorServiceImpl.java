@@ -64,6 +64,7 @@ public class ProveedorServiceImpl implements ProveedorService{
 			log.info("Proveedor Actualizado:{}",proveedor);
 		}
 		else {
+			log.error("Proveedor con ID: {}",proveedorId);
 			throw new ResourceNotFoundException("Proveedor con ID" + proveedorId + " No encontrado");
 		}
 		
@@ -75,7 +76,7 @@ public class ProveedorServiceImpl implements ProveedorService{
 		try {
 			repository.deleteById(proveedorId);
 		} catch (Exception e) {
-			log.info("Error : {}", e.getMessage());
+			log.error("Error : {}", e.getMessage());
 			throw new ResourceNotFoundException("Proveedor con ID" + proveedorId + " No encontrado");
 		}
 		

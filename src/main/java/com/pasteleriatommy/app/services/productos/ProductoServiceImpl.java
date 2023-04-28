@@ -69,11 +69,11 @@ public class ProductoServiceImpl implements ProductoService {
 				repository.save(producto);
 				log.info("Produto Actualizado :{}",producto.getNombre());
 			}else {
-				log.info("Producto no encontrado con ID:{}",productoId);
+				log.error("Producto no encontrado con ID:{}",productoId);
 				throw new ResourceNotFoundException("Producto no encontrado con ID:" + productoId);
 			}
 		} catch (Exception e) {
-			log.info(e.getMessage());
+			log.error(e.getMessage());
 		}
 
 	}
@@ -85,7 +85,7 @@ public class ProductoServiceImpl implements ProductoService {
 		try {
 			repository.deleteById(productoId);
 		} catch (Exception e) {
-			log.info("Error: {}",e.getMessage());
+			log.error("Error: {}",e.getMessage());
 			throw new ResourceNotFoundException("Producto no encontrado con ID:" + productoId);
 		}
 
