@@ -8,5 +8,5 @@ import com.pasteleriatommy.app.entities.Proveedor;
 
 public interface ProveedorRepository extends JpaRepository<Proveedor, Long>{
 
-	Page<Proveedor> finAll(Pageable pageable);
+	Page<Proveedor> findAll(Pageable pageable);
 }
